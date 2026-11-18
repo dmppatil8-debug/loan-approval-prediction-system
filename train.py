@@ -25,8 +25,4 @@ print("Accuracy:", accuracy * 100, "%")
 
 joblib.dump(model, "loan_model.pkl")
 
-# Save testing data
-joblib.dump(X_test, "X_test.pkl")
-joblib.dump(y_test, "y_test.pkl")
-
-print("Model and testing data saved successfully")
+print("Model saved successfully!")
