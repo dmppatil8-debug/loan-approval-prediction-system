@@ -1,3 +1,4 @@
+
 import pandas as pd
 import joblib
 
@@ -20,7 +21,12 @@ model.fit(X_train, y_train)
 pred = model.predict(X_test)
 
 accuracy = accuracy_score(y_test, pred)
-print("Accuracy:", accuracy)
+print("Accuracy:", accuracy * 100, "%")
 
 joblib.dump(model, "loan_model.pkl")
-print("Model Saved Successfully")
+
+# Save testing data
+joblib.dump(X_test, "X_test.pkl")
+joblib.dump(y_test, "y_test.pkl")
+
+print("Model and testing data saved successfully")
